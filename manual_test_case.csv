@@ -1,0 +1,45 @@
+Feature 1: Practice Form,,,,
+TC ID,Title,Steps,Expected Result,Priority
+TC-F1-001,Valid Form Submission,"1. Fill all mandatory fields (First Name, Last Name, Email, Gender, Mobile, Date of Birth).
+2. Submit.","""Thanks for submitting the form"" confirmation dialog appears.",High
+TC-F1-002,Missing Gender Validation,"1. Fill all fields except Gender.
+2. Submit.","Red border on Gender section + error: ""Gender is required"".",High
+TC-F1-003,Invalid Email Format,"1. Enter ""abc.com"" in Email.
+2. Submit.","Red border on Email field + error: ""Please enter a valid email"".",High
+TC-F1-004,Unsupported File Upload,"1. Upload .exe file in ""Picture"" field.
+2. Submit.","Error: ""File format not supported. Allowed: .jpg, .png"".",Medium
+TC-F1-005,Missing Mobile Number,"1. Leave Mobile field empty.
+2. Submit.","Red border on Mobile field + error: ""Mobile Number is required"".",High
+TC-F1-006,Future Date of Birth,1. Attempt to select a future date in Date of Birth picker.,Future dates are disabled in the calendar picker.,High
+,,,,
+Feature 2: Web Tables,,,,
+,,,,
+TC ID,Scenario,Steps,Expected Result,Priority
+TC-F2-001,Add Valid User,"1. Click ""Add"".
+2. Fill: First Name=""Ashish"", Last Name=""srivastava"", Age=""22"", Email=""ashish@gmail.com"", Salary=""50000"", Department=""IT"".
+3. Submit.",New row appears in the table with all entered data.,High
+TC-F2-002,Edit User Last Name,"1. Click ""Edit"" on row with First Name=""Alden"".
+2. Update Last Name to ""Smith"".
+3. Submit.","Row updates to show ""Alden Smith"" in the Last Name column.",High
+TC-F2-003,Delete User,"1. Click ""Delete"" on row with Email=""kierra@example.com"".","Row disappears. Table shows ""10 rows"" ? ""9 rows"".",High
+TC-F2-004,Search User by Email,"1. Type ""alden@example.com"" in the search box.","Only the row with Email=""alden@example.com"" is displayed.",Medium
+TC-F2-005,Pagination Validation,"1. Add 11 users.
+2. Click ""Next"".","Table displays ""Page 1 of 2"". ""Next"" button is enabled.",Medium
+TC-F2-006,Add User with Invalid Age,"1. Click ""Add"".
+2. Enter Age=""abc"".
+3. Submit.","Error: ""Age must be a number"".",High
+,,,,
+Feature 3: Alerts,,,,
+,,,,
+TC ID,Scenario,Steps,Expected Result,Priority
+TC-F3-001,Handle Simple Alert,"1. Click ""Click Button to see alert"".
+2. Wait 5 seconds for alert to appear.
+3. Accept the alert.",Alert is accepted. No visible error on the page.,Medium
+TC-F3-002,Handle Confirmation Alert,"1. Click ""On button click, confirm box will appear"".
+2. Dismiss (Cancel) the alert.","Message displayed: ""You selected Cancel"".",Medium
+TC-F3-003,Handle Prompt Alert,"1. Click ""On button click, prompt box will appear"".
+2. Enter name: ""Ashish"".
+3. Accept the alert.","Message displayed: ""You entered Ashish"".",High
+TC-F3-004,Prompt Alert (Empty Input),"1. Click ""On button click, prompt box will appear"".
+2. Dismiss the alert without entering text.","Message displayed: ""You entered null"" (or no message).",High
+,,,,
